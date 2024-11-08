@@ -44,5 +44,8 @@ public class E5 {
 		System.out.println("La suma de los valores es: " + suma);
 		System.out.println("El valor más alto es: " + max);
 		System.out.println("El valor más bajo es: " + min);
+		
+		//Cerramos scanner
+		rd.close();
 	}
 }

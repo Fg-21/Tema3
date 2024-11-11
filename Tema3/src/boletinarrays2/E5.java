@@ -40,5 +40,7 @@ public class E5 {
 			}
 		}
 		
+		//Cerramos scanner
+		rd.close();
 	}
 }

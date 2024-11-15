@@ -36,18 +36,21 @@ public class E3 {
 		
 		//Rellenamos la tabla
 		for (int i = 0; i < tabla.length; i++) {
-			for (int j = 0; j < tabla.length; i++) {
+			for (int j = 0; j < tabla[0].length; j++) {
 				tabla [i][j] += 10*i+j;
 			}
 		}
 		
 		//Mostramos la tabla por consola
 		for (int i = 0; i < tabla.length; i++) {
-			for ( int j = 0; j < tabla.length; j++) {
-				
+			for (int j = 0; j < tabla[0].length; j++) {
+				System.out.print(" " + tabla[i][j]);
 			}
+			System.out.println();
 		}
 		
+		//Cerramos scanner
+		rd.close();
 		
 		
 		

@@ -27,7 +27,7 @@ public class E4 {
 		int posicion = buscar(key, t);
 		
 		//Decimos si lo ha encontrado o no
-		System.out.println(posicion == -1 ? -1 : "Se ha encontrado el número en " + posicion);
+		System.out.println(posicion == -1 ? -1 : "Se ha encontrado el número en la posición: " + posicion);
 		
 		//Cerramos scanner
 		rd.close();

@@ -11,9 +11,9 @@ public class E5V2 {
 	}
 	
 	
-	static int [][] gira90 (int tablaInicio[][]) {
+
 		
 		
 		
-	}
+	
 }

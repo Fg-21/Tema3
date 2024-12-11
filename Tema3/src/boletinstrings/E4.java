@@ -38,9 +38,12 @@ public class E4 {
 	// Método para invertir la cadena
 	static String invertirCadena(String cadena) {
 		// Variable para la cadena invertida
-		String invert;
+		String invert = "";
 
-		// Sustrae de cadena el ultimo y lo pones en la invert concatenando cada vez
+		// Sustrae de cadena el ultimo y lo pone en la invert concatenando cada vez
+		for (int i = 1; i <= cadena.length(); i++) {
+			invert += cadena.charAt(cadena.length()-i);
+		}
 
 		// Devolvemos la cadena invertida
 		return invert;

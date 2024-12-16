@@ -41,7 +41,6 @@ public class E10 {
 		System.out.println("Introduce el texto a codificar");
 		text = rd.nextLine();
 		
-		//Pasamos el texto a minúsculas
 		
 		
 		//Recorremos el texto y enviamos a la función los caracteres individuales
@@ -51,13 +50,17 @@ public class E10 {
 			
 		}
 		
+		//Imprimimos el texto encriptado
 		System.out.println(codifiedText);
+	
+		//Cerramos scanner
+		rd.close();
 	}
 	
 	//Método para encriptar
 	static char encrypter(char[] conjunto1, char[] conjunto2, char c) {
 		//Variable para guardar el caracter encriptado
-		char encryptedChar = ' ';
+		char encryptedChar = c;
 		
 		//Recorremos el conjunto 1 para ver si nuestro caracter se puede encriptar
 		for (int i = 0; i < conjunto1.length; i++) {

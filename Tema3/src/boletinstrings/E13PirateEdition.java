@@ -1,8 +1,9 @@
 package boletinstrings;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
-public class E13 {
+public class E13PirateEdition {
 	public static void main(String[] args) {
 		/*
 		 * Un anagrama es una palabra, o frase, que resulta de la transposición de otra
@@ -38,34 +39,23 @@ public class E13 {
 	static boolean anagram(String word1, String word2) {
 		// Variable para guardar la respuesta del método
 		boolean anagrama = true;
-
-		// Variable para los caracteres
-		char c;
-
-		// Variable para contar caracteres iguales
-		int cuentaChar = 0;
-
-		// Recorremos la palabra para ver si cada caracter de una está en la otra
-		for (int i = 0; i < word1.length(); i++) {
-			// Guardamos aqui el caracter por el que vamos al recorrer la palabra
-			c = word1.charAt(i);
-
-			// Si la letra en la que estamos, está en la otra palabra se añade uno al
-			// contador de coincidencias
-			if (word2.contains(String.valueOf(c))) {
-				cuentaChar++;
-			}
-
-		}
-
-		// Si contador de los caracteres es igual a la longitud de la palabra, es un
-		// anagrama
-		if (cuentaChar != word2.length()) {
+		
+		//Pasamos las palabras a una tabla de cadenas
+		char tablaCadenas1[] = word1.toCharArray();
+		char tablaCadenas2[] = word2.toCharArray();
+		
+		//Ordenamos las 2 tablas
+		Arrays.sort(tablaCadenas1); 
+		Arrays.sort(tablaCadenas2); 
+		
+		if (!Arrays.equals(tablaCadenas1, tablaCadenas2)) {
 			anagrama = false;
 		}
-
+		
+		
 		// Devolvemos el booleano
 		return anagrama;
 	}
 
 }
+

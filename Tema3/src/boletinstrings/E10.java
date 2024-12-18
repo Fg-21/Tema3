@@ -41,7 +41,8 @@ public class E10 {
 		System.out.println("Introduce el texto a codificar");
 		text = rd.nextLine();
 		
-		
+		//Pasamos a minúscula
+		text = text.toLowerCase();
 		
 		//Recorremos el texto y enviamos a la función los caracteres individuales
 		for (int i = 0; i < text.length(); i++) {
@@ -62,14 +63,21 @@ public class E10 {
 		//Variable para guardar el caracter encriptado
 		char encryptedChar = c;
 		
-		//Recorremos el conjunto 1 para ver si nuestro caracter se puede encriptar
-		for (int i = 0; i < conjunto1.length; i++) {
-			//Si coinciden los caracteres, se traduce al del conjunto 2
-			if(c == conjunto1[i]) {
-				encryptedChar = conjunto2[i];
-			} 
-		}
+		//Contador del bucle
+		int i = 0;
 		
+		//Condición necesaria para salir del bucle si encuentro el caracter
+		boolean finded = false;
+		
+		//Recorremos el conjunto 1 para ver si nuestro caracter se puede encriptar
+		while(i < conjunto1.length) {
+			//Si coinciden los caracteres, se traduce al del conjunto 2
+			if(c == conjunto1[i] && !finded) {
+				encryptedChar = conjunto2[i];
+				finded = true;
+			} 
+			i++;
+		}
 		
 		//Devolvemos un caracter ya encriptado
 		return encryptedChar;

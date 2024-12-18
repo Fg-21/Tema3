@@ -48,6 +48,8 @@ public class E13PirateEdition {
 		Arrays.sort(tablaCadenas1); 
 		Arrays.sort(tablaCadenas2); 
 		
+		
+		//Si la tabla 1 no es igual a la 2, no hay anagrama 
 		if (!Arrays.equals(tablaCadenas1, tablaCadenas2)) {
 			anagrama = false;
 		}

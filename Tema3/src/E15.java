@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class E15 {
@@ -22,9 +23,6 @@ public class E15 {
 		//Variable para la respuesta del jugador 2
 		String guess;
 		
-		//Variable para ver si acierta o no
-		boolean acierto;
-		
 		//Abrimos scanner
 		Scanner rd = new Scanner(System.in);
 		
@@ -45,14 +43,50 @@ public class E15 {
 		System.out.println("Jugador 2: ¿De dónde viene este anagrama?: " + anagrama);
 		guess = rd.nextLine();
 		
-		//Si el jugador 2 acierta o falla, le informamos y que lo intente de nuevo
-		while (!guess.equals(text)) {
-			System.out.println("Intentalo otra vez, que has fallado: " + anagrama);
-			guess = rd.nextLine();	
-		} 
+		
+		//Felicitamos al jugador por ganar
+		if (guess.equals(text)) {
+			System.out.println("Has acertado!");
+		} else {
+			//Si el jugador 2 falla, le informamos y que lo intente de nuevo
+			do {
+				System.out.println("Intentalo otra vez, que has fallado: " + anagrama);
+				guess = rd.nextLine();	
+			} while (!guess.equals(text));
+		}
+		
+		//Cerramos scanner
+		rd.close();
 	}
 	
 	static String anag(String text) {
+		//Tabla de caracteres a rellenar con la palabra
+		char[] letras = text.toCharArray();
 		
+		//Variable para randomizar la posición de la letra
+		Random rand = new Random();
+		
+		//Variable para guardar el número aleatorio
+		int random;
+		
+		//Tabla de texto desordenado a devolver
+		char[] anagrama = new char[letras.length];
+		
+		
+		//Recorremos la palabra caracter por caracter y vamos poniendo cada letra en una posición aleatoria
+		for (int i = 0; i < text.length(); i++) {
+			//Randomizamos la posición de la letra
+			random = rand.nextInt(anagrama.length);
+			
+			//Controlamos que no se repitan las posiciones de las letras
+			if (anagrama[random] == '\u0000') {
+				anagrama[random] = letras[i];
+			} else {
+				i--;
+			}
+		}
+		
+		//Devolvemos el texto desordenado
+		return String.valueOf(anagrama);
 	}
 }

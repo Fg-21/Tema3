@@ -47,6 +47,9 @@ public class E1 {
 				System.out.print(i + " ");
 			}
 			
-		}		
+		}	
+		
+		//Cerramos scanner
+		rd.close();
 	}
 }

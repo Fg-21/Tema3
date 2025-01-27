@@ -39,7 +39,6 @@ public class E4 {
 			}
 			
 		}
-		
 		//Imprimimos la lista
 		System.out.println(listaOrdenada);
 	}
